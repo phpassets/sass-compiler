@@ -4,7 +4,6 @@ namespace PhpAssets\Css\Sass;
 
 use Throwable;
 use InvalidArgumentException;
-use org\bovigo\vfs\vfsStream;
 use PhpAssets\Css\SyntaxExceptionInterface;
 
 class SassSyntaxException extends InvalidArgumentException implements SyntaxExceptionInterface
