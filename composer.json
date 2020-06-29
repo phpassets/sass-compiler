@@ -1,0 +1,18 @@
+{
+	"name": "phpassets/sass-compiler",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "cbl",
+			"email": "lennart.carbe@gmail.com"
+		}
+	],
+	"require": {
+		"phpassets/css": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"PhpAssets\\Css\\Sass\\": "src/"
+		}
+	}
+}
