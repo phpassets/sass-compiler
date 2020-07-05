@@ -11,7 +11,7 @@ use ScssPhp\ScssPhp\Exception\ParserException;
  *
  * @see https://github.com/scssphp/scssphp
  */
-class ScssPhpCompilerAdapter implements CompilerInterface
+class SassCompiler implements CompilerInterface
 {
     /**
      * Scss compiler.
