@@ -24,9 +24,7 @@ jobs:
                     - '7.4'
                 os: [ubuntu-latest]
 
-        name:
-            P${{ matrix.php }} - L${{ matrix.laravel }} - ${{
-            matrix.dependency-version }} - ${{ matrix.os }}
+        name: PHP ${{ matrix.php }} - ${{ matrix.os }}
 
         steps:
             - name: Checkout code
