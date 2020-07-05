@@ -11,7 +11,7 @@
 		}
 	],
 	"require": {
-		"phpassets/css": "~0.0|~1.0",
+		"phpassets/css": "dev-master",
 		"scssphp/scssphp": "~1.0"
 	},
 	"autoload": {
