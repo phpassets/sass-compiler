@@ -1,8 +1,8 @@
 <?php
 
 use Mockery as m;
+use PhpAssets\Css\Sass\SassCompiler;
 use PhpAssets\Css\Sass\SassSyntaxException;
-use PhpAssets\Css\Sass\ScssPhpCompilerAdapter;
 use PHPUnit\Framework\TestCase;
 use ScssPhp\ScssPhp;
 use ScssPhp\ScssPhp\Exception\ParserException;
@@ -16,7 +16,7 @@ class SassCompilerAdapterTest extends TestCase
     {
         $scss = m::mock(ScssPhp\Compiler::class);
         $scss->shouldReceive('compile')->withArgs(['dummy sass']);
-        $compiler = new ScssPhpCompilerAdapter($scss);
+        $compiler = new SassCompiler($scss);
         $compiler->compile('dummy sass');
     }
 
@@ -24,7 +24,7 @@ class SassCompilerAdapterTest extends TestCase
     {
         $scss = m::mock(ScssPhp\Compiler::class);
         $scss->shouldReceive('compile')->andReturn('css');
-        $compiler = new ScssPhpCompilerAdapter($scss);
+        $compiler = new SassCompiler($scss);
         $this->assertEquals('css', $compiler->compile('dummy sass'));
     }
 
@@ -33,14 +33,14 @@ class SassCompilerAdapterTest extends TestCase
         $this->expectException(SassSyntaxException::class);
         $scss = m::mock(ScssPhp\Compiler::class);
         $scss->shouldReceive('compile')->andThrow(ParserException::class);
-        $compiler = new ScssPhpCompilerAdapter($scss);
+        $compiler = new SassCompiler($scss);
         $compiler->compile('dummy sass');
     }
 
     public function test_getSyntaxExceptionLine_method()
     {
         $scss = m::mock(ScssPhp\Compiler::class);
-        $compiler = new ScssPhpCompilerAdapter($scss);
+        $compiler = new SassCompiler($scss);
 
         try {
             (new ScssPhp\Compiler)->compile('
