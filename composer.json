@@ -1,6 +1,9 @@
 {
 	"name": "phpassets/sass-compiler",
 	"license": "MIT",
+	"scripts": {
+		"test": "vendor/bin/phpunit tests"
+	},
 	"authors": [
 		{
 			"name": "cbl",
@@ -8,11 +11,16 @@
 		}
 	],
 	"require": {
-		"phpassets/css": "*"
+		"phpassets/css": "dev-master",
+		"scssphp/scssphp": "^1.1"
 	},
 	"autoload": {
 		"psr-4": {
 			"PhpAssets\\Css\\Sass\\": "src/"
 		}
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.2",
+		"mockery/mockery": "^1.4"
 	}
 }
